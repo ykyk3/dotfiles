@@ -1,0 +1,323 @@
+# この viminfo ファイルは Vim 8.1 によって生成されました.
+# 変更する際には十分注意してください!
+
+# Viminfo version
+|1,4
+
+# このファイルが書かれた時の 'encoding' の値
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~h
+# 最後の 検索パターン:
+~MSle0~/nec-mac
+
+# 最後の Substitute 検索パターン:
+~MSle0&nec-mac
+
+# 最後に置換された文字列:
+$
+
+# コマンドライン 項目の履歴 (新しいものから古いものへ):
+:x
+|2,0,1561733664,,"x"
+:q
+|2,0,1561728754,,"q"
+:w
+|2,0,1561728280,,"w"
+:%s//yoshi/g
+|2,0,1561727963,,"%s//yoshi/g"
+:x!
+|2,0,1561727654,,"x!"
+:w!
+|2,0,1561727108,,"w!"
+
+# 検索文字列 項目の履歴 (新しいものから古いものへ):
+??\a
+|2,1,1561728743,63,"\\a"
+?/nec-mac
+|2,1,1561727955,47,"nec-mac"
+?/nec
+|2,1,1561727946,47,"nec"
+
+# 式 項目の履歴 (新しいものから古いものへ):
+
+# 入力行 項目の履歴 (新しいものから古いものへ):
+
+# デバッグ行 項目の履歴 (新しいものから古いものへ):
+
+# レジスタ:
+""0	CHAR	0
+	nec-mac
+|3,1,0,0,1,0,1561728743,"nec-mac"
+
+# ファイルマーク:
+'0  1  11  ~/dotfiles/.git/COMMIT_EDITMSG
+|4,48,1,11,1561733664,"~/dotfiles/.git/COMMIT_EDITMSG"
+'1  1  9  ~/.git/COMMIT_EDITMSG
+|4,49,1,9,1561728297,"~/.git/COMMIT_EDITMSG"
+'2  35  0  ~/dotfiles/.gitconfig
+|4,50,35,0,1561728281,"~/dotfiles/.gitconfig"
+'3  36  1  ~/dotfiles/.gitconfig
+|4,51,36,1,1561727977,"~/dotfiles/.gitconfig"
+'4  36  1  ~/dotfiles/.gitconfig
+|4,52,36,1,1561727977,"~/dotfiles/.gitconfig"
+'5  68  0  ~/dotfiles/.vimrc
+|4,53,68,0,1561727892,"~/dotfiles/.vimrc"
+'6  1  0  ~/dotfiles/.vimrc
+|4,54,1,0,1561727841,"~/dotfiles/.vimrc"
+'7  1  0  ~/dotfiles/.vimrc
+|4,55,1,0,1561727841,"~/dotfiles/.vimrc"
+'8  3  0  ~/dotfiles/setup.sh
+|4,56,3,0,1561727806,"~/dotfiles/setup.sh"
+'9  2  0  ~/dotfiles/.vimrc
+|4,57,2,0,1561727797,"~/dotfiles/.vimrc"
+
+# ジャンプリスト (新しいものが先):
+-'  1  11  ~/dotfiles/.git/COMMIT_EDITMSG
+|4,39,1,11,1561733664,"~/dotfiles/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git
+|4,39,1,0,1561728743,"~/.git"
+-'  1  0  ~/.git
+|4,39,1,0,1561728743,"~/.git"
+-'  1  9  ~/.git/COMMIT_EDITMSG
+|4,39,1,9,1561728297,"~/.git/COMMIT_EDITMSG"
+-'  1  9  ~/.git/COMMIT_EDITMSG
+|4,39,1,9,1561728297,"~/.git/COMMIT_EDITMSG"
+-'  1  9  ~/.git/COMMIT_EDITMSG
+|4,39,1,9,1561728297,"~/.git/COMMIT_EDITMSG"
+-'  1  9  ~/.git/COMMIT_EDITMSG
+|4,39,1,9,1561728297,"~/.git/COMMIT_EDITMSG"
+-'  35  0  ~/dotfiles/.gitconfig
+|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
+-'  35  0  ~/dotfiles/.gitconfig
+|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
+-'  35  0  ~/dotfiles/.gitconfig
+|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
+-'  35  0  ~/dotfiles/.gitconfig
+|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
+-'  35  0  ~/dotfiles/.gitconfig
+|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
+-'  35  0  ~/dotfiles/.gitconfig
+|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
+-'  35  0  ~/dotfiles/.gitconfig
+|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
+-'  35  0  ~/dotfiles/.gitconfig
+|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
+-'  1  0  ~/dotfiles/.gitconfig
+|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
+-'  1  0  ~/dotfiles/.gitconfig
+|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
+-'  1  0  ~/dotfiles/.gitconfig
+|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
+-'  1  0  ~/dotfiles/.gitconfig
+|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
+-'  1  0  ~/dotfiles/.gitconfig
+|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
+-'  1  0  ~/dotfiles/.gitconfig
+|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
+-'  1  0  ~/dotfiles/.gitconfig
+|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
+-'  1  0  ~/dotfiles/.gitconfig
+|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
+-'  36  1  ~/dotfiles/.gitconfig
+|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
+-'  36  1  ~/dotfiles/.gitconfig
+|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
+-'  36  1  ~/dotfiles/.gitconfig
+|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
+-'  36  1  ~/dotfiles/.gitconfig
+|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
+-'  36  1  ~/dotfiles/.gitconfig
+|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
+-'  36  1  ~/dotfiles/.gitconfig
+|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
+-'  36  1  ~/dotfiles/.gitconfig
+|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
+-'  36  1  ~/dotfiles/.gitconfig
+|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
+-'  36  1  ~/dotfiles/.gitconfig
+|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
+-'  36  1  ~/dotfiles/.gitconfig
+|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
+-'  36  1  ~/dotfiles/.gitconfig
+|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
+-'  36  1  ~/dotfiles/.gitconfig
+|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
+-'  36  1  ~/dotfiles/.gitconfig
+|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
+-'  36  1  ~/dotfiles/.gitconfig
+|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
+-'  36  1  ~/dotfiles/.gitconfig
+|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
+-'  36  1  ~/dotfiles/.gitconfig
+|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
+-'  34  23  ~/dotfiles/.gitconfig
+|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
+-'  34  23  ~/dotfiles/.gitconfig
+|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
+-'  34  23  ~/dotfiles/.gitconfig
+|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
+-'  34  23  ~/dotfiles/.gitconfig
+|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
+-'  34  23  ~/dotfiles/.gitconfig
+|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
+-'  34  23  ~/dotfiles/.gitconfig
+|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
+-'  34  23  ~/dotfiles/.gitconfig
+|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
+-'  34  23  ~/dotfiles/.gitconfig
+|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
+-'  34  23  ~/dotfiles/.gitconfig
+|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
+-'  34  23  ~/dotfiles/.gitconfig
+|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
+-'  34  23  ~/dotfiles/.gitconfig
+|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
+-'  34  23  ~/dotfiles/.gitconfig
+|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
+-'  34  23  ~/dotfiles/.gitconfig
+|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
+-'  34  23  ~/dotfiles/.gitconfig
+|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
+-'  34  23  ~/dotfiles/.gitconfig
+|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
+-'  34  23  ~/dotfiles/.gitconfig
+|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
+-'  2  8  ~/dotfiles/.gitconfig
+|4,39,2,8,1561727948,"~/dotfiles/.gitconfig"
+-'  2  8  ~/dotfiles/.gitconfig
+|4,39,2,8,1561727948,"~/dotfiles/.gitconfig"
+-'  2  8  ~/dotfiles/.gitconfig
+|4,39,2,8,1561727948,"~/dotfiles/.gitconfig"
+-'  2  8  ~/dotfiles/.gitconfig
+|4,39,2,8,1561727948,"~/dotfiles/.gitconfig"
+-'  2  8  ~/dotfiles/.gitconfig
+|4,39,2,8,1561727948,"~/dotfiles/.gitconfig"
+-'  2  8  ~/dotfiles/.gitconfig
+|4,39,2,8,1561727948,"~/dotfiles/.gitconfig"
+-'  2  8  ~/dotfiles/.gitconfig
+|4,39,2,8,1561727948,"~/dotfiles/.gitconfig"
+-'  2  8  ~/dotfiles/.gitconfig
+|4,39,2,8,1561727948,"~/dotfiles/.gitconfig"
+-'  2  8  ~/dotfiles/.gitconfig
+|4,39,2,8,1561727948,"~/dotfiles/.gitconfig"
+-'  2  8  ~/dotfiles/.gitconfig
+|4,39,2,8,1561727948,"~/dotfiles/.gitconfig"
+-'  2  8  ~/dotfiles/.gitconfig
+|4,39,2,8,1561727948,"~/dotfiles/.gitconfig"
+-'  2  8  ~/dotfiles/.gitconfig
+|4,39,2,8,1561727948,"~/dotfiles/.gitconfig"
+-'  2  8  ~/dotfiles/.gitconfig
+|4,39,2,8,1561727948,"~/dotfiles/.gitconfig"
+-'  2  8  ~/dotfiles/.gitconfig
+|4,39,2,8,1561727948,"~/dotfiles/.gitconfig"
+-'  2  8  ~/dotfiles/.gitconfig
+|4,39,2,8,1561727948,"~/dotfiles/.gitconfig"
+-'  2  8  ~/dotfiles/.gitconfig
+|4,39,2,8,1561727948,"~/dotfiles/.gitconfig"
+-'  1  0  ~/dotfiles/.gitconfig
+|4,39,1,0,1561727946,"~/dotfiles/.gitconfig"
+-'  1  0  ~/dotfiles/.gitconfig
+|4,39,1,0,1561727946,"~/dotfiles/.gitconfig"
+-'  1  0  ~/dotfiles/.gitconfig
+|4,39,1,0,1561727946,"~/dotfiles/.gitconfig"
+-'  1  0  ~/dotfiles/.gitconfig
+|4,39,1,0,1561727946,"~/dotfiles/.gitconfig"
+-'  1  0  ~/dotfiles/.gitconfig
+|4,39,1,0,1561727946,"~/dotfiles/.gitconfig"
+-'  1  0  ~/dotfiles/.gitconfig
+|4,39,1,0,1561727946,"~/dotfiles/.gitconfig"
+-'  1  0  ~/dotfiles/.gitconfig
+|4,39,1,0,1561727946,"~/dotfiles/.gitconfig"
+-'  1  0  ~/dotfiles/.gitconfig
+|4,39,1,0,1561727946,"~/dotfiles/.gitconfig"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+-'  68  0  ~/dotfiles/.vimrc
+|4,39,68,0,1561727892,"~/dotfiles/.vimrc"
+
+# ファイル内マークの履歴 (新しいものから古いもの):
+
+> ~/dotfiles/.git/COMMIT_EDITMSG
+	*	1561733662	0
+	"	1	11
+	^	1	12
+	.	1	11
+	+	1	11
+
+> ~/.git/COMMIT_EDITMSG
+	*	1561728295	0
+	"	1	9
+	^	1	10
+	.	1	9
+	+	1	9
+
+> ~/dotfiles/.gitconfig
+	*	1561728280	0
+	"	35	0
+	^	35	2
+	.	36	0
+	+	34	0
+	+	36	0
+
+> ~/dotfiles/.vimrc
+	*	1561727890	0
+	"	68	0
+
+> ~/dotfiles/setup.sh
+	*	1561727802	0
+	"	3	0
+	^	3	86
+	.	3	85
+	+	3	85
+
+> ~/dotfiles/.bash_profile
+	*	1561727759	0
+	"	1	0
+
+> ~/dotfiles/.bashrc
+	*	1561727725	0
+	"	1	0
+
+> ~/dotfiles/.dein
+	"	1	0

@@ -1,0 +1,36 @@
+[user]
+	name = NEC 甲元
+	email = bs-komoto.yoshiro@kcc.co.jp
+[credential]
+	helper = manager
+[alias]
+	co = checkout
+	cb = checkout -b
+	df = diff --word-diff
+	st = status
+	cm = commit
+	ss = stash save
+	sl = stash list
+	sp = stash pop
+	b = branch
+	pl = pull
+	ps = push
+  mile = "!f() { git fetch; git log --no-merges --oneline ..origin/master | wc -l; }; f"
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[core]
+	excludesfile = /Users/yoshi/.gitignore_global
+# [commit]
+# 	template = /Users/yoshi/.stCommitMsg
