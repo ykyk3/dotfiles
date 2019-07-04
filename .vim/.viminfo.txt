@@ -21,9 +21,9 @@ $
 
 # コマンドライン 項目の履歴 (新しいものから古いものへ):
 :x
-|2,0,1561733760,,"x"
+|2,0,1561874766,,"x"
 :q
-|2,0,1561728754,,"q"
+|2,0,1561869550,,"q"
 :w
 |2,0,1561728280,,"w"
 :%s//yoshi/g
@@ -34,6 +34,8 @@ $
 |2,0,1561727108,,"w!"
 
 # 検索文字列 項目の履歴 (新しいものから古いものへ):
+? @$
+|2,1,1561868191,,"@$"
 ??\a
 |2,1,1561728743,63,"\\a"
 ?/nec-mac
@@ -48,242 +50,354 @@ $
 # デバッグ行 項目の履歴 (新しいものから古いものへ):
 
 # レジスタ:
-""0	CHAR	0
-	nec-mac
-|3,1,0,0,1,0,1561728743,"nec-mac"
+""0	LINE	0
+	
+	
+|3,1,0,1,2,0,1561868191,"",""
+"1	LINE	0
+	
+	
+|3,0,1,1,2,0,1561829761,"",""
+"2	LINE	0
+	[[plugins]]
+	repo      = 'Shougo/neomru.vim'
+	on_source = ['unite.vim']
+	
+	[[plugins]]
+	repo = "davidhalter/jedi-vim"
+	on_ft = ['python']
+|3,0,2,1,7,0,1561816408,"[[plugins]]","repo      = 'Shougo/neomru.vim'","on_source = ['unite.vim']","","[[plugins]]","repo = \"davidhalter/jedi-vim\"","on_ft = ['python']"
+"3	LINE	0
+	gunicorn
+	django-heroku
+|3,0,3,1,2,0,1561787408,"gunicorn","django-heroku"
+"-	CHAR	0
+	d
+|3,0,36,0,1,0,1561733796,"d"
 
 # ファイルマーク:
-'0  1  7  ~/dotfiles/.git/COMMIT_EDITMSG
-|4,48,1,7,1561733760,"~/dotfiles/.git/COMMIT_EDITMSG"
-'1  1  11  ~/dotfiles/.git/COMMIT_EDITMSG
-|4,49,1,11,1561733664,"~/dotfiles/.git/COMMIT_EDITMSG"
-'2  1  9  ~/.git/COMMIT_EDITMSG
-|4,50,1,9,1561728297,"~/.git/COMMIT_EDITMSG"
-'3  35  0  ~/dotfiles/.gitconfig
-|4,51,35,0,1561728281,"~/dotfiles/.gitconfig"
-'4  36  1  ~/dotfiles/.gitconfig
-|4,52,36,1,1561727977,"~/dotfiles/.gitconfig"
-'5  36  1  ~/dotfiles/.gitconfig
-|4,53,36,1,1561727977,"~/dotfiles/.gitconfig"
-'6  68  0  ~/dotfiles/.vimrc
-|4,54,68,0,1561727892,"~/dotfiles/.vimrc"
-'7  1  0  ~/dotfiles/.vimrc
-|4,55,1,0,1561727841,"~/dotfiles/.vimrc"
-'8  1  0  ~/dotfiles/.vimrc
-|4,56,1,0,1561727841,"~/dotfiles/.vimrc"
-'9  3  0  ~/dotfiles/setup.sh
-|4,57,3,0,1561727806,"~/dotfiles/setup.sh"
+'0  1  13  ~/dev/firebase/todo/.git/COMMIT_EDITMSG
+|4,48,1,13,1561874766,"~/dev/firebase/todo/.git/COMMIT_EDITMSG"
+'1  1  0  ~/dev/firebase/todo/functions/package.json
+|4,49,1,0,1561869550,"~/dev/firebase/todo/functions/package.json"
+'2  1  0  ~/dev/firebase/todo/functions/package
+|4,50,1,0,1561869498,"~/dev/firebase/todo/functions/package"
+'3  8  0  ~/dev/firebase/firebase.json
+|4,51,8,0,1561869345,"~/dev/firebase/firebase.json"
+'4  1  0  ~/dev/firebase/firebase.json
+|4,52,1,0,1561869291,"~/dev/firebase/firebase.json"
+'5  1  0  ~/dev/firebase/firebase.json
+|4,53,1,0,1561869291,"~/dev/firebase/firebase.json"
+'6  4  0  ~/dev/firebase/firebase.json
+|4,54,4,0,1561868205,"~/dev/firebase/firebase.json"
+'7  4  0  ~/dev/firebase/firebase.json
+|4,55,4,0,1561868205,"~/dev/firebase/firebase.json"
+'8  4  0  ~/dev/firebase/firebase.json
+|4,56,4,0,1561868205,"~/dev/firebase/firebase.json"
+'9  4  0  ~/dev/firebase/firebase.json
+|4,57,4,0,1561868205,"~/dev/firebase/firebase.json"
 
 # ジャンプリスト (新しいものが先):
--'  1  7  ~/dotfiles/.git/COMMIT_EDITMSG
-|4,39,1,7,1561733760,"~/dotfiles/.git/COMMIT_EDITMSG"
--'  1  11  ~/dotfiles/.git/COMMIT_EDITMSG
-|4,39,1,11,1561733664,"~/dotfiles/.git/COMMIT_EDITMSG"
--'  1  0  ~/.git
-|4,39,1,0,1561728743,"~/.git"
--'  1  0  ~/.git
-|4,39,1,0,1561728743,"~/.git"
--'  1  0  ~/.git
-|4,39,1,0,1561728743,"~/.git"
--'  1  0  ~/.git
-|4,39,1,0,1561728743,"~/.git"
--'  1  9  ~/.git/COMMIT_EDITMSG
-|4,39,1,9,1561728297,"~/.git/COMMIT_EDITMSG"
--'  1  9  ~/.git/COMMIT_EDITMSG
-|4,39,1,9,1561728297,"~/.git/COMMIT_EDITMSG"
--'  1  9  ~/.git/COMMIT_EDITMSG
-|4,39,1,9,1561728297,"~/.git/COMMIT_EDITMSG"
--'  1  9  ~/.git/COMMIT_EDITMSG
-|4,39,1,9,1561728297,"~/.git/COMMIT_EDITMSG"
--'  1  9  ~/.git/COMMIT_EDITMSG
-|4,39,1,9,1561728297,"~/.git/COMMIT_EDITMSG"
--'  1  9  ~/.git/COMMIT_EDITMSG
-|4,39,1,9,1561728297,"~/.git/COMMIT_EDITMSG"
--'  1  9  ~/.git/COMMIT_EDITMSG
-|4,39,1,9,1561728297,"~/.git/COMMIT_EDITMSG"
--'  1  9  ~/.git/COMMIT_EDITMSG
-|4,39,1,9,1561728297,"~/.git/COMMIT_EDITMSG"
--'  35  0  ~/dotfiles/.gitconfig
-|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
--'  35  0  ~/dotfiles/.gitconfig
-|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
--'  35  0  ~/dotfiles/.gitconfig
-|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
--'  35  0  ~/dotfiles/.gitconfig
-|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
--'  35  0  ~/dotfiles/.gitconfig
-|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
--'  35  0  ~/dotfiles/.gitconfig
-|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
--'  35  0  ~/dotfiles/.gitconfig
-|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
--'  35  0  ~/dotfiles/.gitconfig
-|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
--'  35  0  ~/dotfiles/.gitconfig
-|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
--'  35  0  ~/dotfiles/.gitconfig
-|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
--'  35  0  ~/dotfiles/.gitconfig
-|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
--'  35  0  ~/dotfiles/.gitconfig
-|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
--'  35  0  ~/dotfiles/.gitconfig
-|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
--'  35  0  ~/dotfiles/.gitconfig
-|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
--'  35  0  ~/dotfiles/.gitconfig
-|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
--'  35  0  ~/dotfiles/.gitconfig
-|4,39,35,0,1561728281,"~/dotfiles/.gitconfig"
--'  1  0  ~/dotfiles/.gitconfig
-|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
--'  1  0  ~/dotfiles/.gitconfig
-|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
--'  1  0  ~/dotfiles/.gitconfig
-|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
--'  1  0  ~/dotfiles/.gitconfig
-|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
--'  1  0  ~/dotfiles/.gitconfig
-|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
--'  1  0  ~/dotfiles/.gitconfig
-|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
--'  1  0  ~/dotfiles/.gitconfig
-|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
--'  1  0  ~/dotfiles/.gitconfig
-|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
--'  1  0  ~/dotfiles/.gitconfig
-|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
--'  1  0  ~/dotfiles/.gitconfig
-|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
--'  1  0  ~/dotfiles/.gitconfig
-|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
--'  1  0  ~/dotfiles/.gitconfig
-|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
--'  1  0  ~/dotfiles/.gitconfig
-|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
--'  1  0  ~/dotfiles/.gitconfig
-|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
--'  1  0  ~/dotfiles/.gitconfig
-|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
--'  1  0  ~/dotfiles/.gitconfig
-|4,39,1,0,1561728218,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  36  1  ~/dotfiles/.gitconfig
-|4,39,36,1,1561727977,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
--'  34  23  ~/dotfiles/.gitconfig
-|4,39,34,23,1561727955,"~/dotfiles/.gitconfig"
+-'  1  13  ~/dev/firebase/todo/.git/COMMIT_EDITMSG
+|4,39,1,13,1561874766,"~/dev/firebase/todo/.git/COMMIT_EDITMSG"
+-'  1  0  ~/dev/firebase/todo/functions/package.json
+|4,39,1,0,1561869550,"~/dev/firebase/todo/functions/package.json"
+-'  1  0  ~/dev/firebase/todo/functions/package.json
+|4,39,1,0,1561869550,"~/dev/firebase/todo/functions/package.json"
+-'  1  0  ~/dev/firebase/todo/functions/package
+|4,39,1,0,1561869498,"~/dev/firebase/todo/functions/package"
+-'  1  0  ~/dev/firebase/todo/functions/package
+|4,39,1,0,1561869498,"~/dev/firebase/todo/functions/package"
+-'  1  0  ~/dev/firebase/todo/functions/package
+|4,39,1,0,1561869498,"~/dev/firebase/todo/functions/package"
+-'  1  0  ~/dev/firebase/todo/functions/package
+|4,39,1,0,1561869498,"~/dev/firebase/todo/functions/package"
+-'  8  0  ~/dev/firebase/firebase.json
+|4,39,8,0,1561869345,"~/dev/firebase/firebase.json"
+-'  8  0  ~/dev/firebase/firebase.json
+|4,39,8,0,1561869345,"~/dev/firebase/firebase.json"
+-'  8  0  ~/dev/firebase/firebase.json
+|4,39,8,0,1561869345,"~/dev/firebase/firebase.json"
+-'  8  0  ~/dev/firebase/firebase.json
+|4,39,8,0,1561869345,"~/dev/firebase/firebase.json"
+-'  8  0  ~/dev/firebase/firebase.json
+|4,39,8,0,1561869345,"~/dev/firebase/firebase.json"
+-'  8  0  ~/dev/firebase/firebase.json
+|4,39,8,0,1561869345,"~/dev/firebase/firebase.json"
+-'  8  0  ~/dev/firebase/firebase.json
+|4,39,8,0,1561869345,"~/dev/firebase/firebase.json"
+-'  8  0  ~/dev/firebase/firebase.json
+|4,39,8,0,1561869345,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561869339,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561869339,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561869339,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561869339,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561869339,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561869339,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561869339,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561869339,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561869291,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561869291,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561869291,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561869291,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561869291,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561869291,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561869291,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561869291,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  4  0  ~/dev/firebase/firebase.json
+|4,39,4,0,1561868205,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561868195,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561868195,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561868195,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561868195,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561868195,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561868195,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561868195,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/firebase.json
+|4,39,1,0,1561868195,"~/dev/firebase/firebase.json"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
+-'  1  0  ~/dev/firebase/functions
+|4,39,1,0,1561868191,"~/dev/firebase/functions"
 
 # ファイル内マークの履歴 (新しいものから古いもの):
 
+> ~/dev/firebase/todo/.git/COMMIT_EDITMSG
+	*	1561874765	0
+	"	1	13
+	^	1	14
+	.	1	13
+	+	1	13
+
+> ~/dev/firebase/todo/functions/package.json
+	*	1561869500	0
+	"	1	0
+
+> ~/dev/firebase/todo/functions/package
+	*	1561869496	0
+	"	1	0
+
+> ~/dev/firebase/firebase.json
+	*	1561869342	0
+	"	8	0
+
+> ~/dev/js/test/config/index.js
+	*	1561868010	0
+	"	8	0
+
+> ~/dev/python/chat/talk/views.py
+	*	1561830626	0
+	"	3	0
+
+> ~/dev/python/chat/manage.py
+	*	1561830295	0
+	"	1	0
+
+> ~/dev/python/chat/.git/COMMIT_EDITMSG
+	*	1561829786	0
+	"	1	9
+	^	1	10
+	.	1	9
+	+	1	9
+
+> ~/dev/python/chat/README.md
+	*	1561829761	0
+	"	1	0
+	.	2	0
+	+	2	0
+
+> ~/dev/python/chat/requirements.txt
+	*	1561829009	0
+	"	1	0
+	.	2	0
+	+	2	0
+
+> ~/.bash_profile
+	*	1561817323	0
+	"	12	36
+	^	12	37
+	.	12	36
+	+	11	39
+	+	12	36
+
+> ~/dotfiles/.vim/rc/dein_lazy.toml
+	*	1561816408	0
+	"	10	0
+	^	10	0
+	.	11	0
+	+	11	0
+	+	10	0
+	+	11	0
+
+> .vim/rc/dein_lazy.toml
+	*	1561816398	0
+	"	1	0
+
+> ~/dev/python/mysite/manage.py
+	*	1561816161	0
+	"	1	0
+
+> ~/dev/python/mysite/mysite/urls.py
+	*	1561795570	0
+	"	20	0
+
+> ~/dev/python/python-getting-started/requirements.txt
+	*	1561784731	0
+	"	1	0
+
+> ~/dotfiles/.vimrc
+	*	1561784665	0
+	"	2	0
+
+> /private/etc/paths
+	*	1561784554	0
+	"	1	0
+
 > ~/dotfiles/.git/COMMIT_EDITMSG
-	*	1561733760	0
-	"	1	7
-	^	1	8
-	.	1	7
-	+	1	7
+	*	1561733796	0
+	"	2	0
+	^	1	3
+	.	1	2
+	+	1	2
 
 > ~/.git/COMMIT_EDITMSG
 	*	1561728295	0
@@ -299,10 +413,6 @@ $
 	.	36	0
 	+	34	0
 	+	36	0
-
-> ~/dotfiles/.vimrc
-	*	1561727890	0
-	"	68	0
 
 > ~/dotfiles/setup.sh
 	*	1561727802	0
