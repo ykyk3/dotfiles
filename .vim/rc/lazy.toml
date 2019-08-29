@@ -8,3 +8,5 @@ repo = 'Shougo/unite.vim'
 repo = 'ujihisa/unite-colorscheme'
 on_source = ['unite.vim']
 
+# [[plugins]]
+# repo = 'ctrlpvim/ctrlp.vim'

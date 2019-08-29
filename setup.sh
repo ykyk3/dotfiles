@@ -1,6 +1,5 @@
 #!/bin/bash
-
-DOT_FILES=(.bashrc .bash_profile .git .vim .vimrc .pyrc .env-exporter .dein .gitconfig)
+DOT_FILES=(.bashrc .bash_profile .git .vim .pyrc .env-exporter .dein .gitconfig nvim/init.vim)
 
 for file in ${DOT_FILES[@]}
 do

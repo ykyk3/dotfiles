@@ -40,3 +40,9 @@ hook_post_update = '''
 [[plugins]]
 repo = 'othree/yajs.vim'
 on_ft = 'javascript'
+
+[[plugins]]
+repo = 'posva/vim-vue'
+
+[[plugins]]
+repo = 'simeji/winresizer'
