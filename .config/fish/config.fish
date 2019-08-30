@@ -10,7 +10,7 @@ alias nipl='npm i --package-lock-only'
 alias lint='npm run lint'
 alias rclean='rm -rf ./node_module & yarn clean'
 
-set PATH $HOME/.nodebrew/current/bin:$PATH
+set PATH $HOME/.nodebrew/current/bin $PATH
 set NODE_ENV development
 set CONFIG_SERVICE_KEY Doroa7mi3oXai7lai5Geikolaeth7Jiy
 set PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
