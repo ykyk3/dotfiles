@@ -1,6 +1,5 @@
-[user]
-	name = ykyk3
-	email = azz.ykoumoto@gmail.com
+[include]
+	path = ~/.gituserconfig
 [credential]
 	helper = manager
 [alias]
@@ -31,6 +30,6 @@
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [core]
-	excludesfile = /Users/yoshi/.gitignore_global
+	excludesfile = ~/.gitignore_global
 # [commit]
-# 	template = /Users/yoshi/.stCommitMsg
+# 	template = ~/.stCommitMsg
