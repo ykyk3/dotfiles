@@ -1,0 +1,3 @@
+# brew関連
+brew install reattach-to-user-namespace
+
