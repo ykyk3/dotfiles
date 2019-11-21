@@ -1,4 +1,5 @@
 filetype plugin on
+set termguicolors
 
 " ファイルツリーの表示形式、1にするとls -laのような表示になります
 let g:netrw_liststyle=1
