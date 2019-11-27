@@ -3,20 +3,19 @@
 repo = 'Shougo/dein.vim'
 
 # git clone 後、実行すべきコマンドがある場合はこんな感じ
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
-hook_post_update = '''
-  if dein#util#_is_windows()
-    let cmd = 'tools\\update-dll-mingw'
-  elseif dein#util#_is_cygwin()
-    let cmd = 'make -f make_cygwin.mak'
-  elseif executable('gmake')
-    let cmd = 'gmake'
-  else
-    let cmd = 'make'
-  endif
-  let g:dein#plugin.build = cmd
-'''
+# [[plugins]]
+# repo = 'Shougo/vimproc.vim'
+# hook_post_update = '''
+#   if dein#util#_is_windows()
+#     let cmd = 'tools\\update-dll-mingw'
+#   elseif dein#util#_is_cygwin()
+#     let cmd = 'make -f make_cygwin.mak'
+#   elseif executable('gmake')
+#     let cmd = 'gmake'
+#   else
+#     let cmd = 'make'
+#   endif
+#   let g:dein#plugin.build = cmd
 
 # ブランチやタグを指定したいとき
 # [[plugins]]
@@ -26,7 +25,6 @@ hook_post_update = '''
 # 特定の条件で読み込みたいとき
 # [[plugins]]
 # repo = 'elzr/vim-json'
-# if   = '''! has('kaoriya')'''
 
 # 依存関係を指定したいとき
 # [[plugins]]
@@ -38,11 +36,22 @@ hook_post_update = '''
 # repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
-repo = 'othree/yajs.vim'
-on_ft = 'javascript'
+repo = 'Shougo/defx.nvim'
 
 [[plugins]]
-repo = 'posva/vim-vue'
+repo = 'ctrlpvim/ctrlp.vim'
 
 [[plugins]]
-repo = 'simeji/winresizer'
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'soramugi/auto-ctags.vim'
+
+[[plugins]]
+repo = "airblade/vim-gitgutter"

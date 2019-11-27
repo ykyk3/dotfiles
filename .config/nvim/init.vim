@@ -1,4 +1,28 @@
 filetype plugin on
+set mouse=a
+set helplang=ja,en
+colorscheme delek
+
+" use rip grep
+if executable('rg')
+  let &grepprg = 'rg --vimgrep --hidden'
+  set grepformat=%f:%l:%c:%m
+endif
+
+" js configs
+if filereadable('.tags')
+  set tags=.tags
+endif
+
+let g:javascript_plugin_jsdoc = 1
+
+" auto ctags
+let g:auto_ctags=1
+let g:auto_ctags_directory_list=['.git','.svn']
+let g:auto_ctags_tags_name='.tags'
+
+" ctrlp.vim
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|build)$'
 
 " ファイルツリーの表示形式、1にするとls -laのような表示になります
 let g:netrw_liststyle=1
@@ -97,6 +121,9 @@ syntax on
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
+" nerd tree conf
+nnoremap <silent><C-e>t :NERDTreeToggle<CR>
+
 " S bind
 nnoremap s <Nop>
 nnoremap sj <C-w>j
@@ -133,3 +160,7 @@ nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 " call submode#map('bufmove', 'n', '', '<', '<C-w><')
 " call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 " call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+
+" terminal settings
+tnoremap <silent> <ESC> <C-\><C-n>
+set sh=fish
