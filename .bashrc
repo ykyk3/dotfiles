@@ -15,7 +15,4 @@ alias nipl='npm i --package-lock-only'
 alias lint='npm run lint'
 
 export PATH=$HOME/.nodebrew/current/bin:$PATH
-export NODE_ENV=development
-export CONFIG_SERVICE_KEY=Doroa7mi3oXai7lai5Geikolaeth7Jiy
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
