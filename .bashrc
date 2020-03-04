@@ -13,6 +13,7 @@ alias yr='yarn;yarn start-dev'
 alias nrl='npm run lint'
 alias nipl='npm i --package-lock-only'
 alias lint='npm run lint'
+alias vi='nvim'
 
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true

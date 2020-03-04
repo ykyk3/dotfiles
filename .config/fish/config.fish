@@ -9,6 +9,8 @@ alias nrl='npm run lint'
 alias nipl='npm i --package-lock-only'
 alias lint='npm run lint'
 alias rclean='rm -rf ./node_module & yarn clean'
+alias vi='nvim'
+alias oni='/Applications/Onivim2.app/Contents/MacOS/Oni2'
 
 set -x PATH $HOME/.nodebrew/current/bin $PATH
 set -x NODE_ENV development
@@ -31,3 +33,5 @@ set __fish_git_prompt_char_untrackedfiles '☡'
 set __fish_git_prompt_char_stashstate '↩'
 set __fish_git_prompt_char_upstream_ahead '+'
 set __fish_git_prompt_char_upstream_behind '-'
+
+set -x MANPATH /usr/local/share/man/ja_JP.UTF-8:(manpath)
