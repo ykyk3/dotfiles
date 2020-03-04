@@ -37,10 +37,6 @@
 	excludesfile = /Users/nec-mac/.gitignore_global
 [commit]
 	template = /Users/nec-mac/.stCommitMsg
-[diff]
-" 	tool = vimdiff
-[difftool]
-" 	prompt = false
 [merge]
 	tool = vimdiff
 [mergetool]
