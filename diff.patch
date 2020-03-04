@@ -1,0 +1,74 @@
+diff --git a/.bashrc b/.bashrc
+index 12eb4c4..349a1e1 100755
+--- a/.bashrc
++++ b/.bashrc
+@@ -13,6 +13,7 @@ alias yr='yarn;yarn start-dev'
+ alias nrl='npm run lint'
+ alias nipl='npm i --package-lock-only'
+ alias lint='npm run lint'
++alias vi='nvim'
+ 
+ export PATH=$HOME/.nodebrew/current/bin:$PATH
+ export NODE_ENV=development
+diff --git a/.config/fish/config.fish b/.config/fish/config.fish
+index fbb47d7..1af48d8 100644
+--- a/.config/fish/config.fish
++++ b/.config/fish/config.fish
+@@ -31,3 +31,5 @@ set __fish_git_prompt_char_untrackedfiles '☡'
+ set __fish_git_prompt_char_stashstate '↩'
+ set __fish_git_prompt_char_upstream_ahead '+'
+ set __fish_git_prompt_char_upstream_behind '-'
++
++set -x MANPATH /usr/local/share/man/ja_JP.UTF-8:(manpath)
+diff --git a/.config/nvim/init.vim b/.config/nvim/init.vim
+index 8b3b91a..bfe688a 100755
+--- a/.config/nvim/init.vim
++++ b/.config/nvim/init.vim
+@@ -1,6 +1,7 @@
+ filetype plugin on
+ set mouse=a
+ set helplang=ja,en
++
+ colorscheme delek
+ 
+ " use rip grep
+diff --git a/.gitconfig b/.gitconfig
+index 56664e6..80941ef 100755
+--- a/.gitconfig
++++ b/.gitconfig
+@@ -1,6 +1,5 @@
+-[user]
+-	name = NEC 甲元
+-	email = bs-komoto.yoshiro@kcc.co.jp
++[include]
++  path = ~/.gitconfig.user
+ [credential]
+ 	helper = manager
+ [alias]
+@@ -37,10 +36,10 @@
+ 	excludesfile = /Users/nec-mac/.gitignore_global
+ [commit]
+ 	template = /Users/nec-mac/.stCommitMsg
+-[diff]
+-" 	tool = vimdiff
+-[difftool]
+-" 	prompt = false
++#[diff]
++#  tool = vimdiff
++# [difftool]
++# 	prompt = false
+ [merge]
+ 	tool = vimdiff
+ [mergetool]
+diff --git a/.tmux.conf b/.tmux.conf
+index b1ca87d..85d0da1 100644
+--- a/.tmux.conf
++++ b/.tmux.conf
+@@ -15,6 +15,7 @@ set -g base-index 1
+ 
+ # ペインのインデックスを1から始める
+ setw -g pane-base-index 1
++setw -g display-panes-time 10000
+ 
+ # 設定ファイルをリロードする
+ bind r source-file ~/.tmux.conf \; display "Reloaded!"
