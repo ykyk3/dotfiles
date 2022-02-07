@@ -2,7 +2,97 @@ filetype plugin on
 set mouse=a
 set helplang=ja,en
 
-colorscheme delek
+" Install Plugin
+call plug#begin('~/.vim/plugged')
+Plug 'vim-jp/vimdoc-ja'
+Plug 'junegunn/fzf', {'dir': '~/.fzf_bin', 'do': './install --all'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/gina.vim'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'sainnhe/gruvbox-material'
+
+call plug#end()
+
+" set options
+set termguicolors
+set number
+
+" map prefix
+let g:mapleader = "\<Space>"
+nnoremap <Leader> <Nop>
+xnoremap <Leader> <Nop>
+nnoremap [dev]    <Nop>
+xnoremap [dev]    <Nop>
+nmap     m        [dev]
+xmap     m        [dev]
+nnoremap [ff]     <Nop>
+xnoremap [ff]     <Nop>
+nmap     z        [ff]
+xmap     z        [ff]
+
+"" coc.nvim
+let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint8', 'coc-prettier', 'coc-git', 'coc-fzf-preview', 'coc-lists']
+
+inoremap <silent> <expr> <C-Space> coc#refresh()
+nnoremap <silent> K       :<C-u>call <SID>show_documentation()<CR>
+nmap     <silent> [dev]rn <Plug>(coc-rename)
+nmap     <silent> [dev]a  <Plug>(coc-codeaction-selected)iw
+
+function! s:coc_typescript_settings() abort
+  nnoremap <silent> <buffer> [dev]f :<C-u>CocCommand eslint.executeAutofix<CR>:CocCommand prettier.formatFile<CR>
+endfunction
+
+augroup coc_ts
+  autocmd!
+  autocmd FileType typescript,typescriptreact call <SID>coc_typescript_settings()
+augroup END
+
+function! s:show_documentation() abort
+  if index(['vim','help'], &filetype) >= 0
+    execute 'h ' . expand('<cword>')
+  elseif coc#rpc#ready()
+    call CocActionAsync('doHover')
+  endif
+endfunction
+
+"" fzf-preview
+let $BAT_THEME                     = 'gruvbox-dark'
+let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'gruvbox-dark'
+
+nnoremap <silent> <C-p>  :<C-u>CocCommand fzf-preview.FromResources buffer project_mru project<CR>
+nnoremap <silent> [ff]s  :<C-u>CocCommand fzf-preview.GitStatus<CR>
+nnoremap <silent> [ff]gg :<C-u>CocCommand fzf-preview.GitActions<CR>
+nnoremap <silent> [ff]b  :<C-u>CocCommand fzf-preview.Buffers<CR>
+nnoremap          [ff]f  :<C-u>CocCommand fzf-preview.ProjectGrep --add-fzf-arg=--exact --add-fzf-arg=--no-sort<Space>
+xnoremap          [ff]f  "sy:CocCommand fzf-preview.ProjectGrep --add-fzf-arg=--exact --add-fzf-arg=--no-sort<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
+
+nnoremap <silent> [ff]q  :<C-u>CocCommand fzf-preview.CocCurrentDiagnostics<CR>
+nnoremap <silent> [ff]rf :<C-u>CocCommand fzf-preview.CocReferences<CR>
+nnoremap <silent> [ff]d  :<C-u>CocCommand fzf-preview.CocDefinition<CR>
+nnoremap <silent> [ff]t  :<C-u>CocCommand fzf-preview.CocTypeDefinition<CR>
+nnoremap <silent> [ff]o  :<C-u>CocCommand fzf-preview.CocOutline --add-fzf-arg=--exact --add-fzf-arg=--no-sort<CR>
+
+"" fern
+nnoremap <silent> <Leader>e :<C-u>Fern . -drawer<CR>
+nnoremap <silent> <Leader>E :<C-u>Fern . -drawer -reveal=%<CR>
+
+"" treesitter
+lua <<EOF
+require('nvim-treesitter.configs').setup {
+  ensure_installed = {
+    "typescript",
+    "tsx",
+  },
+  highlight = {
+    enable = true,
+  },
+}
+EOF
+
+"" gruvbox
+colorscheme gruvbox-material
+"colorscheme delek
 
 " use rip grep
 if executable('rg')
@@ -10,20 +100,8 @@ if executable('rg')
   set grepformat=%f:%l:%c:%m
 endif
 
-" js configs
-if filereadable('.tags')
-  set tags=.tags
-endif
-
-let g:javascript_plugin_jsdoc = 1
-
-" auto ctags
-let g:auto_ctags=1
-let g:auto_ctags_directory_list=['.git','.svn']
-let g:auto_ctags_tags_name='.tags'
-
 " ctrlp.vim
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|build)$'
+"let g:ctrlp_custom_ignore = '\v[\/](node_modules|build)$'
 
 " ファイルツリーの表示形式、1にするとls -laのような表示になります
 let g:netrw_liststyle=1
@@ -75,9 +153,6 @@ set showmatch
 set laststatus=2
 " コマンドラインの補完
 set wildmode=list:longest
-" 折り返し時に表示行単位での移動できるようにする
-nnoremap j gj
-nnoremap k gk
 " 全角文字が崩れる対応
 set ambiwidth=double
 
@@ -109,8 +184,6 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " クリップボード
 set clipboard+=unnamed
 
- source ~/.dein
-
 " nnoremap g V :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 " nnoremap g S :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 
@@ -124,32 +197,32 @@ set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 nnoremap <silent><C-e>t :NERDTreeToggle<CR>
 
 " S bind
-nnoremap s <Nop>
-nnoremap sj <C-w>j
-nnoremap sk <C-w>k
-nnoremap sl <C-w>l
-nnoremap sh <C-w>h
-nnoremap sJ <C-w>J
-nnoremap sK <C-w>K
-nnoremap sL <C-w>L
-nnoremap sH <C-w>H
-nnoremap sn gt
-nnoremap sp gT
-nnoremap sr <C-w>r
-nnoremap s= <C-w>=
-nnoremap sw <C-w>w
-nnoremap so <C-w>_<C-w>|
-nnoremap sO <C-w>=
-nnoremap sN :<C-u>bn<CR>
-nnoremap sP :<C-u>bp<CR>
-nnoremap st :<C-u>tabnew<CR>
-nnoremap sT :<C-u>Unite tab<CR>
-nnoremap ss :<C-u>sp<CR>
-nnoremap sv :<C-u>vs<CR>
-nnoremap sq :<C-u>q<CR>
-nnoremap sQ :<C-u>bd<CR>
-nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
-nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+" nnoremap s <Nop>
+" nnoremap sj <C-w>j
+" nnoremap sk <C-w>k
+" nnoremap sl <C-w>l
+" nnoremap sh <C-w>h
+" nnoremap sJ <C-w>J
+" nnoremap sK <C-w>K
+" nnoremap sL <C-w>L
+" nnoremap sH <C-w>H
+" nnoremap sn gt
+" nnoremap sp gT
+" nnoremap sr <C-w>r
+" nnoremap s= <C-w>=
+" nnoremap sw <C-w>w
+" nnoremap so <C-w>_<C-w>|
+" nnoremap sO <C-w>=
+" nnoremap sN :<C-u>bn<CR>
+" nnoremap sP :<C-u>bp<CR>
+" nnoremap st :<C-u>tabnew<CR>
+" nnoremap sT :<C-u>Unite tab<CR>
+" nnoremap ss :<C-u>sp<CR>
+" nnoremap sv :<C-u>vs<CR>
+" nnoremap sq :<C-u>q<CR>
+" nnoremap sQ :<C-u>bd<CR>
+" nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
+" nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 
 " call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
 " call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
