@@ -17,9 +17,9 @@
 	b = branch
 	pl = pull
 	ps = push
-  mile = "!f() { git fetch; git log --no-merges --oneline ..origin/master | wc -l; }; f"
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-  lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	mile = "!f() { git fetch; git log --no-merges --oneline ..origin/master | wc -l; }; f"
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 [filter "lfs"]
 	process = git-lfs filter-process
@@ -35,15 +35,19 @@
 [core]
 	excludesfile = /Users/nec-mac/.gitignore_global
 [commit]
-	template = /Users/nec-mac/.stCommitMsg
+	#template = /Users/nec-mac/.stCommitMsg
 #[diff]
 #  tool = vimdiff
 # [difftool]
 # 	prompt = false
-[merge]
-	tool = vimdiff
+# [merge]
+#	tool = vimdiff
 [mergetool]
 	prompt = false
 [user]
-	name = NEC 甲元
-	email = bs-komoto.yoshiro@kcc.co.jp
+	name = ykyk3
+	email = sakura198606@gmail.com
+[ghq]
+	root = ~/git
+[pull]
+	rebase = false
