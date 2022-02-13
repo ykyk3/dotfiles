@@ -4,14 +4,21 @@ set helplang=ja,en
 
 " Install Plugin
 call plug#begin('~/.vim/plugged')
+if !exists('g:vscode')
+    " ordinary neovim
+  Plug 'lambdalisue/fern.vim'
+endif
+Plug 'Shougo/ddu.vim'
+Plug 'vim-denops/denops.vim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'junegunn/fzf', {'dir': '~/.fzf_bin', 'do': './install --all'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/gina.vim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'sainnhe/gruvbox-material'
+Plug 'tomasr/molokai'
 
+" Plug 'nvim-lua/plenary.nvim'
 call plug#end()
 
 " set options
@@ -57,8 +64,16 @@ function! s:show_documentation() abort
 endfunction
 
 "" fzf-preview
-let $BAT_THEME                     = 'gruvbox-dark'
-let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'gruvbox-dark'
+let $BAT_THEME                     = 'molokai'
+let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'molokai'
+
+" function
+" 先頭大文字
+function IsDrectory() 
+  return getcwd() == expand('%:p:h')
+endfunction
+
+echo IsDrectory()
 
 nnoremap <silent> <C-p>  :<C-u>CocCommand fzf-preview.FromResources buffer project_mru project<CR>
 nnoremap <silent> [ff]s  :<C-u>CocCommand fzf-preview.GitStatus<CR>
@@ -90,9 +105,7 @@ require('nvim-treesitter.configs').setup {
 }
 EOF
 
-"" gruvbox
-colorscheme gruvbox-material
-"colorscheme delek
+colorscheme molokai
 
 " use rip grep
 if executable('rg')
@@ -153,18 +166,29 @@ set showmatch
 set laststatus=2
 " コマンドラインの補完
 set wildmode=list:longest
-" 全角文字が崩れる対応
-set ambiwidth=double
 
 " Tab系
-" 不可視文字を可視化
-set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
 set tabstop=2
 " 行頭でのTab文字の表示幅
 set shiftwidth=2
+
+if !exists('g:vscode')
+  " コマンドラインの補完
+  set wildmode=list:longest
+  " 全角文字が崩れる対応
+  set ambiwidth=double
+
+  " Tab系
+  " Tab文字を半角スペースにする
+  set expandtab
+  " 行頭以外のTab文字の表示幅（スペースいくつ分）
+  set tabstop=2
+  " 行頭でのTab文字の表示幅
+  set shiftwidth=2
+endif
 
 
 " 検索系
@@ -190,39 +214,42 @@ set clipboard+=unnamed
 syntax on
 
 " 可視化
-set list
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+if !exists('g:vscode')
+  " ordinary neovim
+  set list
+  set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+endif
 
 " nerd tree conf
 nnoremap <silent><C-e>t :NERDTreeToggle<CR>
 
 " S bind
-" nnoremap s <Nop>
-" nnoremap sj <C-w>j
-" nnoremap sk <C-w>k
-" nnoremap sl <C-w>l
-" nnoremap sh <C-w>h
-" nnoremap sJ <C-w>J
-" nnoremap sK <C-w>K
-" nnoremap sL <C-w>L
-" nnoremap sH <C-w>H
-" nnoremap sn gt
-" nnoremap sp gT
-" nnoremap sr <C-w>r
-" nnoremap s= <C-w>=
-" nnoremap sw <C-w>w
-" nnoremap so <C-w>_<C-w>|
-" nnoremap sO <C-w>=
-" nnoremap sN :<C-u>bn<CR>
-" nnoremap sP :<C-u>bp<CR>
-" nnoremap st :<C-u>tabnew<CR>
-" nnoremap sT :<C-u>Unite tab<CR>
-" nnoremap ss :<C-u>sp<CR>
-" nnoremap sv :<C-u>vs<CR>
-" nnoremap sq :<C-u>q<CR>
-" nnoremap sQ :<C-u>bd<CR>
-" nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
-" nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+nnoremap s <Nop>
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+nnoremap sn gt
+nnoremap sp gT
+nnoremap sr <C-w>r
+nnoremap s= <C-w>=
+nnoremap sw <C-w>w
+nnoremap so <C-w>_<C-w>|
+nnoremap sO <C-w>=
+nnoremap sN :<C-u>bn<CR>
+nnoremap sP :<C-u>bp<CR>
+nnoremap st :<C-u>tabnew<CR>
+nnoremap sT :<C-u>Unite tab<CR>
+nnoremap ss :<C-u>sp<CR>
+nnoremap sv :<C-u>vs<CR>
+nnoremap sq :<C-u>q<CR>
+nnoremap sQ :<C-u>bd<CR>
+nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
+nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 
 " call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
 " call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
@@ -235,4 +262,4 @@ nnoremap <silent><C-e>t :NERDTreeToggle<CR>
 
 " terminal settings
 tnoremap <silent> <ESC> <C-\><C-n>
-set sh=fish
+set sh=zsh
