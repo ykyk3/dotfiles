@@ -5,25 +5,32 @@ set helplang=ja,en
 " Install Plugin
 call plug#begin('~/.vim/plugged')
 if !exists('g:vscode')
-    " ordinary neovim
   Plug 'lambdalisue/fern.vim'
+    Plug 'yuki-yano/fern-preview.vim'
+    Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+    Plug 'lambdalisue/fern-git-status.vim'
+  Plug 'tomasr/molokai'
+  Plug 'lambdalisue/nerdfont.vim'
+  Plug 'lambdalisue/glyph-palette.vim'
+  Plug 'lambdalisue/gina.vim'
+  Plug 'vim-jp/vimdoc-ja'
+  Plug 'antoinemadec/FixCursorHold.nvim'
+  Plug 'tpope/vim-commentary'
+  Plug 'vim-denops/denops.vim'
+  Plug 'junegunn/fzf', {'dir': '~/.fzf_bin', 'do': './install --all'}
+  Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'skanehira/jumpcursor.vim'
+  Plug 'thinca/vim-quickrun'
+  " Plug 'xolox/vim-notes'
+  " Plug 'Shougo/ddu.vim'
+  " Plug 'nvim-lua/plenary.nvim'
 endif
-Plug 'Shougo/ddu.vim'
-Plug 'vim-denops/denops.vim'
-Plug 'vim-jp/vimdoc-ja'
-Plug 'junegunn/fzf', {'dir': '~/.fzf_bin', 'do': './install --all'}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'lambdalisue/gina.vim'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'sainnhe/gruvbox-material'
-Plug 'tomasr/molokai'
-
-" Plug 'nvim-lua/plenary.nvim'
 call plug#end()
 
 " set options
 set termguicolors
-set number
 
 " map prefix
 let g:mapleader = "\<Space>"
@@ -38,72 +45,12 @@ xnoremap [ff]     <Nop>
 nmap     z        [ff]
 xmap     z        [ff]
 
-"" coc.nvim
-let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint8', 'coc-prettier', 'coc-git', 'coc-fzf-preview', 'coc-lists']
 
-inoremap <silent> <expr> <C-Space> coc#refresh()
-nnoremap <silent> K       :<C-u>call <SID>show_documentation()<CR>
-nmap     <silent> [dev]rn <Plug>(coc-rename)
-nmap     <silent> [dev]a  <Plug>(coc-codeaction-selected)iw
-
-function! s:coc_typescript_settings() abort
-  nnoremap <silent> <buffer> [dev]f :<C-u>CocCommand eslint.executeAutofix<CR>:CocCommand prettier.formatFile<CR>
-endfunction
-
-augroup coc_ts
-  autocmd!
-  autocmd FileType typescript,typescriptreact call <SID>coc_typescript_settings()
-augroup END
-
-function! s:show_documentation() abort
-  if index(['vim','help'], &filetype) >= 0
-    execute 'h ' . expand('<cword>')
-  elseif coc#rpc#ready()
-    call CocActionAsync('doHover')
-  endif
-endfunction
-
-"" fzf-preview
-let $BAT_THEME                     = 'molokai'
-let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'molokai'
-
-" function
-" 先頭大文字
-function IsDrectory() 
-  return getcwd() == expand('%:p:h')
-endfunction
-
-echo IsDrectory()
-
-nnoremap <silent> <C-p>  :<C-u>CocCommand fzf-preview.FromResources buffer project_mru project<CR>
-nnoremap <silent> [ff]s  :<C-u>CocCommand fzf-preview.GitStatus<CR>
-nnoremap <silent> [ff]gg :<C-u>CocCommand fzf-preview.GitActions<CR>
-nnoremap <silent> [ff]b  :<C-u>CocCommand fzf-preview.Buffers<CR>
-nnoremap          [ff]f  :<C-u>CocCommand fzf-preview.ProjectGrep --add-fzf-arg=--exact --add-fzf-arg=--no-sort<Space>
-xnoremap          [ff]f  "sy:CocCommand fzf-preview.ProjectGrep --add-fzf-arg=--exact --add-fzf-arg=--no-sort<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
-
-nnoremap <silent> [ff]q  :<C-u>CocCommand fzf-preview.CocCurrentDiagnostics<CR>
-nnoremap <silent> [ff]rf :<C-u>CocCommand fzf-preview.CocReferences<CR>
-nnoremap <silent> [ff]d  :<C-u>CocCommand fzf-preview.CocDefinition<CR>
-nnoremap <silent> [ff]t  :<C-u>CocCommand fzf-preview.CocTypeDefinition<CR>
-nnoremap <silent> [ff]o  :<C-u>CocCommand fzf-preview.CocOutline --add-fzf-arg=--exact --add-fzf-arg=--no-sort<CR>
-
-"" fern
-nnoremap <silent> <Leader>e :<C-u>Fern . -drawer<CR>
-nnoremap <silent> <Leader>E :<C-u>Fern . -drawer -reveal=%<CR>
-
-"" treesitter
-lua <<EOF
-require('nvim-treesitter.configs').setup {
-  ensure_installed = {
-    "typescript",
-    "tsx",
-  },
-  highlight = {
-    enable = true,
-  },
-}
-EOF
+" auto reload init.vim
+" augroup source-vimrc
+"   autocmd!
+"   autocmd BufWritePost *init.vim source $MYVIMRC | set foldmethod=marker
+" augroup END
 
 colorscheme molokai
 
@@ -113,13 +60,10 @@ if executable('rg')
   set grepformat=%f:%l:%c:%m
 endif
 
-" ctrlp.vim
-"let g:ctrlp_custom_ignore = '\v[\/](node_modules|build)$'
-
 " ファイルツリーの表示形式、1にするとls -laのような表示になります
 let g:netrw_liststyle=1
 " ヘッダを非表示にする
-let g:netrw_banner=0
+" let g:netrw_banner=0
 " サイズを(K,M,G)で表示する
 let g:netrw_sizestyle="H"
 " 日付フォーマットを yyyy/mm/dd(曜日) hh:mm:ss で表示する
@@ -133,7 +77,9 @@ nmap <F1> :tabnew $MYVIMRC<CR>
 "vimが出力するファイルの出力先
 set directory=~/.vim/tmp
 set backupdir=~/.vim/tmp
-" set viminfo+=n~/.vim/.viminfo.txt
+if !has('nvim')
+  let viminfo+=n~/.vim/.viminfo.txt
+endif
 
 " setting
 "文字コードをUFT-8に設定
@@ -164,17 +110,8 @@ set visualbell
 set showmatch
 " ステータスラインを常に表示
 set laststatus=2
-" コマンドラインの補完
-set wildmode=list:longest
 
 " Tab系
-" Tab文字を半角スペースにする
-set expandtab
-" 行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=2
-" 行頭でのTab文字の表示幅
-set shiftwidth=2
-
 if !exists('g:vscode')
   " コマンドラインの補完
   set wildmode=list:longest
@@ -207,6 +144,10 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " クリップボード
 set clipboard+=unnamed
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=300}
+augroup END
 
 " nnoremap g V :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 " nnoremap g S :split<CR> :exe("tjump ".expand('<cword>'))<CR>
@@ -216,12 +157,9 @@ syntax on
 " 可視化
 if !exists('g:vscode')
   " ordinary neovim
-  set list
-  set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+   set list
+   set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 endif
-
-" nerd tree conf
-nnoremap <silent><C-e>t :NERDTreeToggle<CR>
 
 " S bind
 nnoremap s <Nop>
@@ -251,15 +189,11 @@ nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 
-" call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
-" call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
-" call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
-" call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
-" call submode#map('bufmove', 'n', '', '>', '<C-w>>')
-" call submode#map('bufmove', 'n', '', '<', '<C-w><')
-" call submode#map('bufmove', 'n', '', '+', '<C-w>+')
-" call submode#map('bufmove', 'n', '', '-', '<C-w>-')
-
 " terminal settings
 tnoremap <silent> <ESC> <C-\><C-n>
 set sh=zsh
+
+"================ Source other Configs ====================
+for f in split(glob('~/dotfiles/.config/nvim/plugins/*.vim'), '\n')
+    exe 'source' f
+endfor
