@@ -1,5 +1,5 @@
 [include]
-  path = ~/.gitconfig.user
+	path = ~/.gitconfig.user
 [credential]
 	helper = manager
 [alias]
@@ -15,11 +15,17 @@
 	sl = stash list
 	sp = stash pop
 	b = branch
+	fp = fetch --prune
+	pp = pull --prune
+	sw = switch
+	swc = switch -c
 	pl = pull
 	ps = push
 	mile = "!f() { git fetch; git log --no-merges --oneline ..origin/master | wc -l; }; f"
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	cmfu = cm --fixup
+	rasi = rebase --autosquash -i 
 
 [filter "lfs"]
 	process = git-lfs filter-process
@@ -33,9 +39,8 @@
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [core]
-	excludesfile = /Users/nec-mac/.gitignore_global
+	editor = vim
 [commit]
-	#template = /Users/nec-mac/.stCommitMsg
 #[diff]
 #  tool = vimdiff
 # [difftool]
@@ -44,10 +49,9 @@
 #	tool = vimdiff
 [mergetool]
 	prompt = false
-[user]
-	name = ykyk3
-	email = sakura198606@gmail.com
 [ghq]
 	root = ~/git
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
