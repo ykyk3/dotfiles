@@ -4,29 +4,30 @@ set helplang=ja,en
 
 " Install Plugin
 call plug#begin('~/.vim/plugged')
-if !exists('g:vscode')
-  Plug 'lambdalisue/fern.vim'
-    Plug 'yuki-yano/fern-preview.vim'
-    Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-    Plug 'lambdalisue/fern-git-status.vim'
-  Plug 'tomasr/molokai'
-  Plug 'lambdalisue/nerdfont.vim'
+Plug 'vim-denops/denops.vim'
+
+Plug 'lambdalisue/fern.vim'
+  Plug 'yuki-yano/fern-preview.vim'
+  Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+  Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/gin.vim'
+Plug 'vim-jp/vimdoc-ja'
+" Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf', {'dir': '~/.fzf_bin', 'do': './install --all'}
+Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'skanehira/jumpcursor.vim'
+Plug 'thinca/vim-quickrun'
+
+Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-repeat'
+
+Plug 'tomasr/molokai'
+" アイコンフォント
+Plug 'lambdalisue/nerdfont.vim'
   Plug 'lambdalisue/glyph-palette.vim'
-  Plug 'lambdalisue/gina.vim'
-  Plug 'vim-jp/vimdoc-ja'
-  Plug 'antoinemadec/FixCursorHold.nvim'
-  Plug 'tpope/vim-commentary'
-  Plug 'vim-denops/denops.vim'
-  Plug 'junegunn/fzf', {'dir': '~/.fzf_bin', 'do': './install --all'}
-  Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'nvim-treesitter/nvim-treesitter'
-  Plug 'skanehira/jumpcursor.vim'
-  Plug 'thinca/vim-quickrun'
-  " Plug 'xolox/vim-notes'
-  " Plug 'Shougo/ddu.vim'
-  " Plug 'nvim-lua/plenary.nvim'
-endif
 call plug#end()
 
 " set options
@@ -98,6 +99,11 @@ set showcmd
 " 見た目系
 " 行番号を表示
 set number
+" 行数表示を早退的に
+set relativenumber!
+" 絶対表示とトグルする
+map <F12> :set relativenumber!<CR>
+
 " 現在の行を強調表示
 set cursorline
 " 行末の1文字先までカーソルを移動できるように
@@ -114,7 +120,9 @@ set laststatus=2
 " Tab系
 if !exists('g:vscode')
   " コマンドラインの補完
-  set wildmode=list:longest
+  " set wildmode=list:longest
+  set wildmode=longest,list,full
+  set wildmenu
   " 全角文字が崩れる対応
   set ambiwidth=double
 
@@ -144,6 +152,8 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " クリップボード
 set clipboard+=unnamed
+
+" ヤンクした時にハイライトする
 augroup highlight_yank
     autocmd!
     au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=300}
@@ -193,7 +203,7 @@ nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 tnoremap <silent> <ESC> <C-\><C-n>
 set sh=zsh
 
-"================ Source other Configs ====================
+" ================ Source other Configs ====================
 for f in split(glob('~/dotfiles/.config/nvim/plugins/*.vim'), '\n')
     exe 'source' f
 endfor
