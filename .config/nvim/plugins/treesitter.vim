@@ -1,3 +1,4 @@
+UsePlugin 'nvim-treesitter'
 "" treesitter
 lua <<EOF
 require('nvim-treesitter.configs').setup {

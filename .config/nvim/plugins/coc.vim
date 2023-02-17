@@ -1,3 +1,4 @@
+UsePlugin 'coc.vim'
 " =============== Autocomplete Configs ====================
 let g:coc_global_extensions = [ 'coc-json', 'coc-tsserver', 'coc-eslint8', 'coc-prettier', 'coc-git' ,'coc-fzf-preview', 'coc-lists', 'coc-css', 'coc-go', 'coc-omnisharp', 'coc-flutter' ]
 
