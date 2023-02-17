@@ -9,7 +9,7 @@ alias vim="nvim"
 alias vi="nvim"
 # Customize to your needs...
 export JAVA_HOME='/usr/libexec/java_home -v 17'
-export GOPATH=$HOME
+export GOPATH=$HOME:git config ghq.root
 export PATH=$PATH:$GOPATH/bin
 
 # peco
