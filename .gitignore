@@ -1,1 +1,17 @@
+# macOS
 .DS_Store
+
+# Vim
+*.swp
+*.swo
+*.swn
+.netrwhist
+*.vim.tmp
+
+# Editor
+.idea/
+.vscode/
+
+# Cache
+*.cache
+*.log
