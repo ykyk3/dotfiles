@@ -1,1 +1,18 @@
+# macOS
 .DS_Store
+
+# Vim/Neovim
+.vim/bundle/
+.vim/plugged/
+.vim/tmp/
+.vim/.viminfo*
+.vim/.netrwhist
+*.swp
+*.swo
+*~
+
+# Node.js (for coc.nvim etc)
+node_modules/
+
+# Fish
+.config/fish/fish_variables
