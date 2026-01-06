@@ -1,0 +1,37 @@
+# Editor aliases
+alias vim='nvim'
+alias vi='nvim'
+
+# Python aliases  
+alias python='python3'
+alias pip='pip3'
+
+# Git aliases (補完用)
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git log --oneline --graph --decorate'
+alias gd='git diff'
+alias gco='git checkout'
+
+# Directory navigation
+alias ll='ls -la'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Safety aliases
+alias rm='rm -i'
+alias cp='cp -i'  
+alias mv='mv -i'
+
+# Apps
+alias chez='chezmoi'
+alias c='claude'
+alias t='tmux'
+
+# macOS specific
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	alias showfiles='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
+	alias hidefiles='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
+fi

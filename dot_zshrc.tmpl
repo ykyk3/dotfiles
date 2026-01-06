@@ -1,0 +1,57 @@
+# Load zprezto if available
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Fig pre block
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
+# Path configurations
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+export DOTNET_ROOT=$HOME/dotnet
+export PATH=$PATH:$HOME/dotnet
+
+# Go configuration
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+# pnpm
+export PNPM_HOME="{{ .chezmoi.homeDir }}/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# Load aliases
+[ -f ~/.aliases ] && source ~/.aliases
+[ -f ~/.aliases.local ] && source ~/.aliases.local
+
+# Completions
+autoload -U compinit
+compinit
+
+# Tool completions (check if commands exist)
+command -v jj >/dev/null 2>&1 && source <(jj util completion zsh)
+command -v uv >/dev/null 2>&1 && eval "$(uv generate-shell-completion zsh)"
+command -v uvx >/dev/null 2>&1 && eval "$(uvx --generate-shell-completion zsh)"
+
+# Functions
+unalias g 2>/dev/null
+g() {
+  local selected=$(ghq list | fzf)
+  [ -n "$selected" ] && cd "$(ghq root)/$selected"
+}
+
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# OS specific configurations
+{{ if eq .chezmoi.os "darwin" -}}
+export PATH="/opt/homebrew/opt/dotnet@8/bin:$PATH"
+{{ end -}}
+
+# Fig post block
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

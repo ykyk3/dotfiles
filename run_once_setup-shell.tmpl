@@ -1,0 +1,108 @@
+{{/* 共通設定 */}}
+{{- $editorAliases := dict "vim" "nvim" "vi" "nvim" -}}
+
+{{ if eq .chezmoi.os "windows" -}}
+# PowerShell script for Windows shell setup
+
+$Green = [ConsoleColor]::Green
+$Yellow = [ConsoleColor]::Yellow
+
+function Write-ColorOutput {
+    param([string]$Message, [ConsoleColor]$Color = [ConsoleColor]::White)
+    Write-Host $Message -ForegroundColor $Color
+}
+
+Write-ColorOutput "Setting up shell environment for Windows..." $Green
+
+# PowerShell modules
+$modules = @("PSReadLine", "posh-git")
+
+foreach ($module in $modules) {
+    if (-not (Get-Module -ListAvailable -Name $module)) {
+        Write-ColorOutput "Installing PowerShell module: $module..." $Yellow
+        Install-Module -Name $module -Scope CurrentUser -Force
+    }
+}
+
+# Setup PowerShell profile
+if (-not (Test-Path $PROFILE)) {
+    Write-ColorOutput "Creating PowerShell profile..." $Yellow
+    New-Item -ItemType File -Path $PROFILE -Force
+}
+
+# 共通エイリアス設定
+$profileContent = @"
+# Import modules
+Import-Module PSReadLine
+Import-Module posh-git
+
+# PSReadLine configuration
+Set-PSReadLineKeyHandler -Key Tab -Function Complete
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -HistorySearchCursorMovesToEnd
+
+# 共通エイリアス
+{{- range $alias, $command := $editorAliases }}
+Set-Alias -Name {{ $alias }} -Value {{ $command }}
+{{- end }}
+
+# 共通関数
+function g {
+    `$selected = ghq list | fzf
+    if (`$selected) {
+        Set-Location (Join-Path (ghq root) `$selected)
+    }
+}
+"@
+
+$currentProfile = Get-Content $PROFILE -ErrorAction SilentlyContinue
+if (-not ($currentProfile -like "*Import-Module PSReadLine*")) {
+    Write-ColorOutput "Adding configuration to PowerShell profile..." $Yellow
+    Add-Content -Path $PROFILE -Value $profileContent
+}
+
+Write-ColorOutput "Shell setup complete! Please restart PowerShell." $Yellow
+
+{{ else -}}
+#!/bin/bash
+set -e
+
+# 共通色設定
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Setting up shell environment for {{ .chezmoi.os }}...${NC}"
+
+# 共通：コマンド存在チェック
+command_exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+{{ if eq .chezmoi.os "darwin" -}}
+# macOS specific setup
+if [[ ! -d "$HOME/.zprezto" ]]; then
+    echo -e "${YELLOW}Installing Prezto...${NC}"
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+fi
+
+{{ else if eq .chezmoi.os "linux" -}}
+# Linux specific setup
+if ! command_exists zsh; then
+    echo -e "${YELLOW}Installing zsh...${NC}"
+    sudo apt install -y zsh
+fi
+
+if [[ ! -d "$HOME/.zprezto" ]]; then
+    echo -e "${YELLOW}Installing Prezto...${NC}"
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+    if [[ "$SHELL" != "$(which zsh)" ]]; then
+        echo -e "${YELLOW}Changing default shell to zsh...${NC}"
+        chsh -s $(which zsh)
+    fi
+fi
+{{ end -}}
+
+echo -e "${GREEN}Shell setup complete!${NC}"
+{{ end -}}
