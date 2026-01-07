@@ -1,5 +1,5 @@
 {{/* 共通パッケージリスト定義 */}}
-{{- $packages := list "git" "neovim" "fzf" "ripgrep" "nodejs" "python" "go" "fd" "bat" "jq" "curl" "wget" -}}
+{{- $packages := list "git" "neovim" "fzf" "ripgrep" "nodejs" "python" "go" "fd" "bat" "jq" "curl" "wget" "deno" -}}
 
 {{ if eq .chezmoi.os "windows" -}}
 # PowerShell script for Windows package installation
@@ -88,6 +88,17 @@ if (Test-Command "go") {
     }
 }
 
+# 共通：vim-plugインストール
+$VimPlugPath = "$env:LOCALAPPDATA\nvim-data\site\autoload\plug.vim"
+if (-not (Test-Path $VimPlugPath)) {
+    Write-ColorOutput "Installing vim-plug..." $Yellow
+    $VimPlugDir = Split-Path $VimPlugPath -Parent
+    if (-not (Test-Path $VimPlugDir)) {
+        New-Item -ItemType Directory -Path $VimPlugDir -Force | Out-Null
+    }
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" -OutFile $VimPlugPath
+}
+
 Write-ColorOutput "Package installation complete!" $Green
 
 {{ else -}}
@@ -130,7 +141,13 @@ echo -e "${YELLOW}Updating package list...${NC}"
 sudo apt update
 
 echo -e "${YELLOW}Installing packages via apt...${NC}"
-sudo apt install -y {{ range $packages }}{{ if eq . "fd" }}fd-find{{ else if eq . "nodejs" }}nodejs npm{{ else if eq . "python" }}python3 python3-pip{{ else }}{{ . }}{{ end }} {{ end }}tmux build-essential
+sudo apt install -y {{ range $packages }}{{ if eq . "fd" }}fd-find{{ else if eq . "nodejs" }}nodejs npm{{ else if eq . "python" }}python3 python3-pip{{ else if eq . "deno" }}{{ else }}{{ . }}{{ end }} {{ end }}tmux build-essential
+
+# Denoインストール
+if ! command_exists deno; then
+    echo -e "${YELLOW}Installing Deno...${NC}"
+    curl -fsSL https://deno.land/install.sh | sh
+fi
 
 # Goインストール
 if ! command_exists go; then
@@ -148,6 +165,14 @@ if command_exists go; then
         export PATH=$PATH:/usr/local/go/bin
         go install github.com/x-motemen/ghq@latest
     fi
+fi
+
+# 共通：vim-plugインストール
+VIM_PLUG_PATH="${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim"
+if [ ! -f "$VIM_PLUG_PATH" ]; then
+    echo -e "${YELLOW}Installing vim-plug...${NC}"
+    curl -fLo "$VIM_PLUG_PATH" --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
 echo -e "${GREEN}Package installation complete!${NC}"

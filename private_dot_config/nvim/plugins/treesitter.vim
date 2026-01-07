@@ -1,12 +1,17 @@
 "" treesitter
+UsePlugin 'nvim-treesitter'
+
 lua <<EOF
-require('nvim-treesitter.configs').setup {
-  ensure_installed = {
-    "typescript",
-    "tsx",
-  },
-  highlight = {
-    enable = true,
-  },
-}
+local ok, configs = pcall(require, 'nvim-treesitter.configs')
+if ok then
+  configs.setup {
+    ensure_installed = {
+      "typescript",
+      "tsx",
+    },
+    highlight = {
+      enable = true,
+    },
+  }
+end
 EOF
