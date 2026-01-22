@@ -1,0 +1,25 @@
+#!/bin/bash
+# WezTermをiTerm2のホットキーウィンドウのようにトグルする
+# opt+space で呼び出される
+
+WEZTERM_BUNDLE_ID="com.github.wez.wezterm"
+
+# WezTermが起動しているかチェック
+if ! pgrep -x "wezterm-gui" > /dev/null; then
+    # 起動していない場合は起動
+    open -a WezTerm
+    exit 0
+fi
+
+# 現在最前面のアプリを取得
+FRONTMOST=$(osascript -e 'tell application "System Events" to get bundle identifier of first process whose frontmost is true')
+
+if [ "$FRONTMOST" = "$WEZTERM_BUNDLE_ID" ]; then
+    # WezTermが最前面の場合は隠す
+    osascript -e 'tell application "System Events" to set visible of process "wezterm-gui" to false'
+else
+    # WezTermが最前面でない場合
+    # まず表示状態にしてからアクティベート
+    osascript -e 'tell application "System Events" to set visible of process "wezterm-gui" to true'
+    osascript -e 'tell application "WezTerm" to activate'
+fi

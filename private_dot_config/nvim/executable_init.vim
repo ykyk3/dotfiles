@@ -14,8 +14,9 @@ Plug 'lambdalisue/gin.vim'
 Plug 'vim-jp/vimdoc-ja'
 " Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'tpope/vim-commentary'
-Plug 'junegunn/fzf', {'dir': '~/.fzf_bin', 'do': './install --all'}
-Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
+" Telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter'
 " Plug 'skanehira/jumpcursor.vim'

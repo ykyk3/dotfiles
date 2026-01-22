@@ -1,0 +1,25 @@
+{
+    "title": "WezTerm Toggle",
+    "rules": [
+        {
+            "description": "Option+Space で WezTerm をトグル（iTerm2風ホットキーウィンドウ）",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "spacebar",
+                        "modifiers": {
+                            "mandatory": ["option"],
+                            "optional": ["caps_lock"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "~/.local/bin/toggle-wezterm"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

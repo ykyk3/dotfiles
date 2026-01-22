@@ -1,0 +1,5 @@
+sourceDir = "~/dotfiles"
+[git]
+    autoPush = true
+[edit]
+command = "vim"
